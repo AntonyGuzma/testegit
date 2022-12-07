@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="arrastavel" draggable="true"> Programação Web</div>
+    <div id="alvo"></div>
+
+</body>
+
+<script text="text/Javascript">
+    var arrastavel = document.getElementById("arrastavel");
+
+    arrastavel.ondragstart = function(event){
+        event.dataTransfer.setData("info", "HTML5!");
+    }
+
+    arrastavel.ondragend = function(event){
+        this.style.left = event.pageX + "px";
+        this.style.top = event.pageY-150 + "px";
+    }
+
+    var alvo = document.getElementById("alvo");
+
+</script>
+
+</html>
